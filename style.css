@@ -96,7 +96,7 @@
     width: max-content;
     /* min-width: 500px; */
     background-color: white;
-    border-radius: 50px;
+    border-radius: min(5vw, 50px);
     text-align: left;
     padding-right: min(2vw, 15px);
     bottom: max(2vw, -175px);
@@ -129,7 +129,7 @@
     position: absolute;
     height: 10px;
     width: 10px;
-    border: 30px solid transparent;
+    border: min(2.5vw, 25px) solid transparent;
     z-index: 1001;
     visibility: hidden;
     opacity: 0;
