@@ -83,21 +83,21 @@
 
 .services .sws {
     background-color: var(--sws-color);
-    background-image: url(/img/sws1.png);
+    background-image: url(img/sws1.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .services .sd {
     background-color: var(--sd-color);
-    background-image: url(/img/sws.png);
+    background-image: url(img/sws.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .services .isp {
     background-color: var(--isp-color);
-    background-image: url(/img/isps.png);
+    background-image: url(img/isps.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
