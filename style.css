@@ -6,9 +6,9 @@
 :root {
 
 /* SERVICES SECTION COLORS */
-    --sws-color: #00695c;
-    --sd-color: #616161;
-    --isp-color: #fb8c00;
+    --sws-color: #18694F;
+    --sd-color: #4D4F50;
+    --isp-color: #E33E1B;
 }
 
 .navbar {
@@ -69,22 +69,37 @@
     width: 400px;
 }
 
-.services i {
+/* .services i {
     margin-top: min(18vw, 200px);
     transform: translateY(-50%);
     font-size: min(20vw, 10em);
+} */
+
+.services img {
+    margin-top: min(18vw, 200px);
+    transform: translateY(-50%);
+    height: min(20vw,250px);
 }
 
 .services .sws {
     background-color: var(--sws-color);
+    background-image: url(/img/sws1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .services .sd {
     background-color: var(--sd-color);
+    background-image: url(/img/sws.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .services .isp {
     background-color: var(--isp-color);
+    background-image: url(/img/isps.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .service-container {
