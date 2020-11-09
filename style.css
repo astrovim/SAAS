@@ -64,6 +64,19 @@
     margin-bottom: min(25vw, 300px);
 }
 
+.serviceLabel {
+    width: max-content;
+    text-align: center;
+    font-size: min(2vw, 20px);
+    font-family: 'Source Code Pro', monospace;
+    color: white;
+    transform: translateX(-50%);
+    line-height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 75%;
+}
+
 .services .col-4 {
     height: min(35vw, 400px);
     width: 400px;
@@ -76,7 +89,7 @@
 } */
 
 .services img {
-    margin-top: min(18vw, 200px);
+    margin-top: min(13vw, 150px);
     transform: translateY(-50%);
     height: min(20vw,250px);
 }
@@ -337,9 +350,9 @@
     padding-left: 0;
 }
 
-.social i {
+.social img {
     margin-right: min(2vw, 30px);
-    font-size: min(4vw, 2em);
+    width: min(5vw,50px);
 }
 
 .backToMain {
@@ -355,6 +368,61 @@
 .backToMain a, .social a {
     color: black;
 }
+
+.upcomingEvents, .prevEvents {
+    background-color: #2d2d2d;
+    height: 350px;
+    max-width: 1080px;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+.upcomingEvents p, .prevEvents p{
+    margin-left: min(2vw,25px);
+    padding-top: min(1vw,15px);
+    font-size: min(5vw,50px);
+    font-family: 'Bebas Neue';
+    color: white;
+}
+
+.upcomingEvents img {
+    width: 100%;
+}
+
+  .gallery {
+      height: 60%;
+  }
+
+  .gallery-cell {
+    width: 200px;
+    margin-top: 25px;
+    margin-right: 125px;
+    opacity: 40%;
+    transform: translateY(3%);
+    object-fit: cover;
+  }
+
+  .gallery-cell.is-selected {
+    opacity: 100%;
+    transform: scale(1.25);
+    transition: transform 1s;
+  }
+
+  .flickity-button {
+    background: transparent;
+  }
+
+  .flickity-button:hover {
+      background: transparent;
+  }
+
+  .flickity-button-icon {
+      fill: white;
+  }
+
+  .flickity-prev-next-button:disabled {
+    display: none;
+  }
 
 .page-footer {
     /* background-color: #006a4e; */
