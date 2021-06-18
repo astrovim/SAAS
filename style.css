@@ -11,10 +11,23 @@
     --isp-color: #E33E1B;
 }
 
+.container {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 .navbar {
     box-shadow: 0 0 0 0;
     font-family: 'Source Code Pro', monospace;
     font-size: min(2vw, 15px);
+    width: 90%;
+    margin: auto;
 }
 
 .navbar-nav {
@@ -22,7 +35,7 @@
 }
 
 .navbar img {
-    width: min(5vw, 40px);
+    width: min(5vw, 70px);
 }
 
 .saas .nav-link:hover {
@@ -47,6 +60,9 @@
     font-family: 'Bebas Neue';
     border-bottom: min(1vw,5px) solid black;
     white-space: nowrap;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .welcome .wlcmtxt {
@@ -55,6 +71,8 @@
     font-size: min(1.5vw,1.2em);
     font-family: 'Cutive Mono', monospace;
     width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .services {
@@ -96,21 +114,21 @@
 
 .services .sws {
     background-color: var(--sws-color);
-    background-image: url(img/sws1.png);
+    background-image: url(img/contents/sws1.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .services .sd {
     background-color: var(--sd-color);
-    background-image: url(img/sws.png);
+    background-image: url(img/contents/sws.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .services .isp {
     background-color: var(--isp-color);
-    background-image: url(img/isps.png);
+    background-image: url(img/contents/isps.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -424,14 +442,37 @@
     display: none;
   }
 
+.events {
+    text-align: center;
+}
+
+.events img {
+    width: 60vw;
+    /* margin-left: 50%; */
+    /* transform: translateX(-50%); */
+    margin-bottom: 100px;
+}
+
+.mainSiteLink h1{
+    color: black;
+    margin-left: 50%;
+    margin-bottom: 75px;
+    transform: translateX(-50%);
+    text-align: center;
+    font-family: 'Bebas Neue';
+    font-size: min(3vw, 35px);
+    width: max-content;
+    border-bottom: 5px solid black;
+}
+
 .page-footer {
-    /* background-color: #006a4e; */
-    background-image: url("img/University\ Information\ bg\ fix.png");
+    background-color: #006a4e;
+    /* background-image: url("img/University\ Information\ bg\ fix.png"); */
     background-size: 100%;
     font-family: 'Poppins', sans-serif;
-    font-size: min(1.5vw, 13px);
+    font-size: min(1.7vw, 20px);
     padding-top: min(1.5vw, 15px);
-    max-width: 1080px;
+    /* max-width: 1080px; */
     margin-left: auto;
     margin-right: auto;
 }

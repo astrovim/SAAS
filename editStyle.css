@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+* {
+    margin: 25px;
+}
+
+body {
+    background-color: #4D4F50;
+}
+
+.editBody {
+    margin-bottom: 50px;
+}
+
+.btn {
+    background-color: #18694F;
+    color: whitesmoke;
+    font-weight: 700;
+    text-align: left;
+}
+
+.btn:hover {
+    color: whitesmoke;
+    background-color: #187d4f;
+}
+
+.editHeader {
+    border-bottom: 2px solid white;
+}
+
+h1 {
+    color: #E33E1B;
+    font-family: 'Poppins';
+    margin-bottom: 0;
+}
+
+h2 {
+    font-family: 'Bebas Neue';
+    margin-bottom: 0;
+    margin-top: 5vh;
+    color: whitesmoke;
+}
+
+.logout {
+    text-align: right;
+    margin-left: auto;
+}
+
+.logout a{
+    color: whitesmoke;
+    font-family: 'Bebas Neue';
+    font-size: 25px;
+}
+
+h6 {
+    text-align: right;
+    color: whitesmoke;
+}
+
+label {
+    font-family: 'Bebas Neue';
+    color: whitesmoke;
+}
+
+input[type=text] {
+    background-color: #4D4F50;
+    color: white;
+    border: 0px;
+}
+
+input[type=text]:focus {
+    outline: 0px;
+}
+
+textarea {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 500px;
+    height: fit-content;
+}
