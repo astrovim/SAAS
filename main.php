@@ -137,11 +137,11 @@ try {
             </ul> -->
         <!-- </div> -->
         
-        <ul class = "saas navbar-nav ml-auto">
+        <!-- <ul class = "saas navbar-nav ml-auto">
             <li class="nav-item">
                 <a class="nav-link" href="Login.php">ADMIN</a>
             </li>
-        </ul>
+        </ul> -->
     </nav>
 
     <div class="welcome">

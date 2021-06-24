@@ -48,3 +48,23 @@ h1{
 .credentials {
     color: white;
 }
+
+
+
+
+.menuBtn {
+    padding-top: 25px;
+}
+
+.menuBtn .btn{
+    width: 70%;
+    font-size: 20px;
+    color: whitesmoke;
+    background-color: #4D4F50;
+}
+
+.menuBtn a {
+    color: whitesmoke;
+    font-family: 'Bebas Neue';
+    font-size: 25px;
+}

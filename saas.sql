@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 18, 2021 at 09:06 AM
+-- Generation Time: Jun 24, 2021 at 05:42 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -29,6 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admin` (
   `USERNAME` varchar(25) NOT NULL,
+  `NAME` varchar(50) NOT NULL,
+  `EMAIL` varchar(25) NOT NULL,
   `PASSWORD` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -36,9 +38,10 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`USERNAME`, `PASSWORD`) VALUES
-('ald', 'rin'),
-('gal', 'fo');
+INSERT INTO `admin` (`USERNAME`, `NAME`, `EMAIL`, `PASSWORD`) VALUES
+('admin', 'ad min', 'admin@gmail.com', 'admin123'),
+('galfo', 'fernando galfo', 'fernandogalfo@gmail.com', 'galfo123'),
+('rodel', 'aldrin', 'rodel@gmail.com', '123123');
 
 -- --------------------------------------------------------
 
@@ -146,6 +149,61 @@ INSERT INTO `images` (`output`, `filename`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `log`
+--
+
+CREATE TABLE `log` (
+  `USER` varchar(25) NOT NULL,
+  `KEYWORD` varchar(35) NOT NULL,
+  `OLD` text NOT NULL,
+  `NEW` text NOT NULL,
+  `TIMESTAMP` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `log`
+--
+
+INSERT INTO `log` (`USER`, `KEYWORD`, `OLD`, `NEW`, `TIMESTAMP`) VALUES
+('gal', 'mainwelcometxtheader', 'WELCOME HUNTER', 'WELCOME HUNTERS', '2021-06-22 16:50:33'),
+('ald', 'mainwelcometxtheader', 'WELCOME HUNTERS', 'WELCOMING HUNTERS', '2021-06-23 05:14:05'),
+('galfo', 'mainheadertxt', 'STUDENTS AFFAIRS AND SERVICES', 'STUDENTS AFFAIRS AND SERVICESS', '2021-06-24 08:56:07'),
+('galfo', 'mainheadertxt', 'STUDENTS AFFAIRS AND SERVICESS', 'STUDENTS AFFAIRS AND SERVICES', '2021-06-24 08:56:35'),
+('galfo', 'events', 'events', 'NEU_Main.jpg', '2021-06-24 09:22:37'),
+('galfo', 'events', 'NEU_Main.jpg', 'events.png', '2021-06-24 09:53:06'),
+('galfo', 'mainslide', '**ADDED**', 'default', '2021-06-24 10:07:51'),
+('galfo', 'mainslide', '**DELETED**', 'default', '2021-06-24 10:08:21'),
+('galfo', 'mainslide', '**ADDED**', 'default', '2021-06-24 10:09:21'),
+('galfo', 'mainslide', '**DELETED**', 'default', '2021-06-24 10:11:22'),
+('galfo', 'mainslide', '**ADDED**', 'events.png', '2021-06-24 10:11:38'),
+('galfo', 'mainslide', '**DELETED**', 'events.png', '2021-06-24 10:11:57'),
+('galfo', 'mainservice1icon', 'usericon1.png', 'usericon2.png', '2021-06-24 10:15:01'),
+('galfo', 'mainservice1icon', 'usericon2.png', 'usericon1.png', '2021-06-24 10:15:23'),
+('galfo', 'mainservice2icon', 'usericon2.png', 'usericon1.png', '2021-06-24 10:18:34'),
+('galfo', 'mainservice2icon', 'usericon1.png', 'usericon2.png', '2021-06-24 10:18:52'),
+('galfo', 'mainservice3icon', 'usericon3.png', 'usericon3.png', '2021-06-24 10:19:05'),
+('galfo', '1.1embedUrl', 'https://www.youtube.com/embed/-laHrCrn64U', 'https://www.youtube.com/embed/-laHrCrn64U', '2021-06-24 10:21:48'),
+('galfo', 'welcomeimg11', '1.1.png', '1.1.png', '2021-06-24 10:33:29'),
+('galfo', 'slide111', 'secB.png', 'secB.png', '2021-06-24 10:34:21'),
+('galfo', 'slide211', 'neu1.jfif', 'neu1.jfif', '2021-06-24 10:34:38'),
+('galfo', 'welcometextheader12', 'GUIDANCE AND COUNSELING SERVICES', 'GUIDANCE AND COUNSELING SERVICES', '2021-06-24 10:55:51'),
+('galfo', 'welcometext12', 'New Era University is more than welcome to help you in every aspect and part of that is to see you grow not only academically, but also mentally and emotionally. The Guidance and Counseling Department offers consultation services and mental health awareness programs to students.', 'New Era University is more than welcome to help you in every aspect and part of that is to see you grow not only academically, but also mentally and emotionally. The Guidance and Counseling Department offers consultation services and mental health awareness programs to students.', '2021-06-24 10:55:59'),
+('galfo', 'welcomeimg12', '1.2.png', '1.2.png', '2021-06-24 10:56:17'),
+('galfo', 'slide112', 'secB.png', 'secB.png', '2021-06-24 10:56:39'),
+('galfo', 'slide212', 'neu1.jfif', 'neu1.jfif', '2021-06-24 10:56:50'),
+('galfo', 'department12', 'DEPARTMENT: OSAS', 'DEPARTMENT: OSAS', '2021-06-24 10:56:56'),
+('galfo', 'mng12', 'MNG: Mr. John Doe', 'MNG: Mr. John Doe', '2021-06-24 10:57:02'),
+('galfo', 'contact12', '+09961234567', '+09961234567', '2021-06-24 10:57:08'),
+('galfo', 'email12', 'Johndoe@neu.edu', 'Johndoe@neu.edu', '2021-06-24 10:57:14'),
+('galfo', '1.1embedUrl', 'https://www.youtube.com/embed/-laHrCrn64U', 'https://www.youtube.com/embed/-laHrCrn64U', '2021-06-24 10:57:19'),
+('galfo', 'welcometextheader311', 'SOCIAL AND COMMUNITY INVOLVEMENT PROGRAMS', 'SOCIAL AND COMMUNITY INVOLVEMENT PROGRAMS', '2021-06-24 12:09:19'),
+('galfo', 'slide1311', 'secB.png', 'secB.png', '2021-06-24 12:09:40'),
+('galfo', 'welcometextheader25', 'Student Publication/ Yearbook', 'Student Publication/ Yearbook', '2021-06-24 12:09:49'),
+('galfo', 'welcometextheader24', 'Student Discipline', 'Student Discipline', '2021-06-24 14:05:11');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `text`
 --
 
@@ -161,7 +219,7 @@ CREATE TABLE `text` (
 INSERT INTO `text` (`content`, `output`) VALUES
 ('Lorem ipis dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Magna', 'mainwelcometxt'),
 ('STUDENTS AFFAIRS AND SERVICES', 'mainheadertxt'),
-('WELCOME HUNTERS', 'mainwelcometxtheader'),
+('WELCOMING HUNTERS', 'mainwelcometxtheader'),
 ('VISIT NEW ERA UNIVERSITY MAIN PAGE', 'mainneupagelink'),
 ('STUDENT WELFARE<br> SERVICES', 'mainservice1'),
 ('<br>STUDENT DEVELOPMENT', 'mainservice2'),
@@ -313,6 +371,16 @@ INSERT INTO `text` (`content`, `output`) VALUES
 ('SPORTS DEVELOPMENT PROGRAMS', 'welcometextheader310'),
 ('New Era University social and community involvement programs', 'welcometext311'),
 ('SOCIAL AND COMMUNITY INVOLVEMENT PROGRAMS', 'welcometextheader311');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`USERNAME`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

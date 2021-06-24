@@ -36,7 +36,8 @@ try {
     
     if($username==$use && $password==$pass){        
         $_SESSION['verified'] = TRUE;
-        header('Location: edit.php');
+        $_SESSION['CurrentUser'] = $username;
+        header('Location: menu.php');
     }else {
         header('Location: Login.php?credentials=Invalid Credentials!');
         session_destroy();

@@ -54,6 +54,18 @@ h2 {
     font-size: 25px;
 }
 
+.editBody a{
+    color: whitesmoke;
+    font-family: 'Bebas Neue';
+    font-size: 25px;
+}
+
+.back a {    
+    color: whitesmoke;
+    font-family: 'Bebas Neue';
+    font-size: 25px;
+}
+
 h6 {
     text-align: right;
     color: whitesmoke;
@@ -79,4 +91,21 @@ textarea {
     margin-bottom: 10px;
     width: 500px;
     height: fit-content;
+}
+
+
+.tableArea {
+    margin-top: 25px;
+    background-color: whitesmoke;
+}
+
+thead {
+    text-align: center;
+}
+
+
+
+.credentials {
+    width: 300px;
+    margin-bottom: 10px;
 }

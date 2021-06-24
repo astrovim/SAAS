@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+if (isset($_SESSION['verified'])) {
+	header('Location: menu.php');
+	exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
