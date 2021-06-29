@@ -44,7 +44,7 @@ $userQuery = $userResult;
             var pass1 = document.getElementById('password').value;
             var pass2 = document.getElementById('password1').value;
 
-            if (pass1 == pass2){
+            if (pass1 == pass2 && pass1 != ""){
                 document.getElementById('submitBtn').style.display = 'block';
             }else {
                 document.getElementById('submitBtn').style.display = 'none';
@@ -106,6 +106,7 @@ $userQuery = $userResult;
             var wew = '<?php echo $userT?>';
             if(wew == 'admin'){
             document.getElementById('cpBtn').style.display = 'inline-block';
+            document.getElementById('cmBtn').style.display = 'inline-block';
             }
 
             document.getElementById('cpSect').style.display = 'none';
@@ -135,6 +136,7 @@ $userQuery = $userResult;
                 <h1>User Credentials</h1>
             </div>
 
+<div style="display:inline-block; width: 35%">
             <h2>ADD USER</h2>
             <form action="userDb.php" method="POST" onsubmit="return confirm('Are you sure you want to add this user?')">
             <div class="form-white form-outline credentials">
@@ -142,8 +144,16 @@ $userQuery = $userResult;
             <label class="form-label" for="username">Username</label>     
             </div>
             <div class="form-white form-outline credentials">
-            <input class="form-control" id="fullName" name="fullName" type="text" required>
-            <label class="form-label" for="fullName">Full Name</label>
+            <input class="form-control" id="firstName" name="firstName" type="text" required>
+            <label class="form-label" for="firstName">First Name</label>
+            </div>
+            <div class="form-white form-outline credentials">
+            <input class="form-control" id="middleName" name="middleName" type="text" required>
+            <label class="form-label" for="middleName">Middle Name</label>
+            </div>
+            <div class="form-white form-outline credentials">
+            <input class="form-control" id="lastName" name="lastName" type="text" required>
+            <label class="form-label" for="lastName">Last Name</label>
             </div>
             <div class="form-white form-outline credentials">
             <input class="form-control" id="emailAd" name="emailAd" type="email" required>
@@ -161,15 +171,19 @@ $userQuery = $userResult;
             <button id="submitBtn" class="btn btn-primary" type="submit" name="submit" name="action" style="display:none;">SUBMIT</button>
             </div>
             </form>
+</div>
 
-            <div class="tableArea" style="width:600px;">
+
+            <div class="tableArea" style="width:60%; display: inline-block;">
 
             <table class="table table-bordered table-hover" id="userTable" cellspacing="0" cellpadding="1" border="2" width="100%">
                 <thead class="table-dark">
                 <tr>
 
                 <th>USERNAME</th>
-                <th>NAME</th>
+                <th>FIRSTNAME</th>
+                <th>MIDDLENAME</th>
+                <th>LASTNAME</th>
                 <th>EMAIL</th>
 
                 </tr>
@@ -180,7 +194,9 @@ $userQuery = $userResult;
             foreach ($userQuery as $val){
                 echo '<tr>'.
                 '<td>'.$val['USERNAME'].'</td>'.
-                '<td>'.$val['NAME'].'</td>'.
+                '<td>'.$val['FIRSTNAME'].'</td>'.
+                '<td>'.$val['MIDDLENAME'].'</td>'.
+                '<td>'.$val['LASTNAME'].'</td>'.
                 '<td>'.$val['EMAIL'].'</td>'.
                 '</tr>';
             }
@@ -190,8 +206,7 @@ $userQuery = $userResult;
 
             </table>
 
-</div>
-
+            
             <form action="userDb.php" method="POST" onsubmit="return confirm('Are you sure you want to delete this user?')">
                 <input type="hidden" id="userDel" name="userDel">
                 <button id="delBtn" class="btn btn-primary" type="submit" style="display:none;">DELETE</button> 
@@ -224,6 +239,9 @@ $userQuery = $userResult;
             <button class="btn btn-primary" id="emubmitBtn" type="submit">SAVE</button>
             </form>
 </div>
+
+            </div>
+
 
 </div>
 

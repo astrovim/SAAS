@@ -13,13 +13,72 @@ try {
         die('Could not connect.');
     }
 
-$logDb = $connection->prepare("select * from log order by timestamp desc");
 
-$logDb->execute();
+    if(isset($_POST['selectUsername'])){
+    
+    $selectedUser = $_POST['selectUsername'];
 
-$logResult = $logDb->fetchAll(PDO::FETCH_ASSOC);
+    $selectedTimestamp = $_POST['selectDate'];
 
-$logQuery = $logResult;
+        if(isset($_POST['selectKeyword']) && $_POST['selectKeyword'] != ""){
+            $selectedKeyword = $_POST['selectKeyword'];
+
+            $logDb = $connection->prepare("select * from log where user=? AND keyword=? AND date(timestamp)=? order by timestamp desc");
+
+            $logDb->execute([$selectedUser, $selectedKeyword, $selectedTimestamp]);
+        
+            $logResult = $logDb->fetchAll(PDO::FETCH_ASSOC);
+        
+            $logQuery = $logResult;
+        
+        }else {
+            $logDb = $connection->prepare("select * from log where user=? AND date(timestamp)=? order by timestamp desc");
+
+            $logDb->execute([$selectedUser, $selectedTimestamp]);
+        
+            $logResult = $logDb->fetchAll(PDO::FETCH_ASSOC);
+        
+            $logQuery = $logResult;
+        }
+
+    } else {
+
+    $logDb = $connection->prepare("select * from log order by timestamp desc");
+
+    $logDb->execute();
+
+    $logResult = $logDb->fetchAll(PDO::FETCH_ASSOC);
+
+    $logQuery = $logResult;
+
+    }
+
+
+$userDb = $connection->prepare("SELECT DISTINCT USER FROM `log`");
+
+$userDb->execute();
+
+$userResult = $userDb->fetchAll(PDO::FETCH_ASSOC);
+
+$userQuery = $userResult;
+
+$keyDb = $connection->prepare("SELECT DISTINCT KEYWORD FROM `log`");
+
+$keyDb -> execute();
+
+$keyResult = $keyDb->fetchAll(PDO::FETCH_ASSOC);
+
+$keyQuery = $keyResult;
+
+
+$dateDb = $connection->prepare("SELECT DISTINCT DATE(TIMESTAMP) FROM `log`");
+
+$dateDb -> execute();
+
+$dateResult = $dateDb->fetchAll(PDO::FETCH_ASSOC);
+
+$dateQuery = $dateResult;
+
 
 ?>
 
@@ -85,6 +144,66 @@ function highlight_log_row() {
 <div class="back">
     <a href="menu.php">&#8592;BACK</a>
 </div>
+
+<form action="logs.php" method="POST">
+            <select name="selectUsername" id="selectUsername" required>
+                <option value="">--Select Username--</option>
+                <?php 
+                    foreach($userQuery as $d){
+                        if(isset($_POST['selectUsername'])){
+                            if($selectedUser == $d['USER']){
+                        echo '<option value="'. $d['USER'] .'" selected>' . $d['USER'] . '</option>';
+                            }else{
+                        echo '<option value="'. $d['USER'] .'">' . $d['USER'] . '</option>';
+                            }
+                        }else{
+                        echo '<option value="'. $d['USER'] .'">' . $d['USER'] . '</option>';
+
+                        }
+                    }                
+                ?>
+            </select>
+
+            <select name="selectKeyword" id="selectKeyword">
+                <option value="">--Select Keyword--</option>
+                <?php 
+                    foreach($keyQuery as $d){
+                        if(isset($_POST['selectKeyword']) && $_POST['selectKeyword'] != ""){
+                            if($selectedKeyword == $d['KEYWORD']){
+                        echo '<option value="'. $d['KEYWORD'] .'" selected>' . $d['KEYWORD'] . '</option>';
+                            }else{
+                        echo '<option value="'. $d['KEYWORD'] .'">' . $d['KEYWORD'] . '</option>';
+                            }
+                        }else{
+                        echo '<option value="'. $d['KEYWORD'] .'">' . $d['KEYWORD'] . '</option>';
+
+                        }
+                        echo '<option value="'. $d['KEYWORD'] .'">' . $d['KEYWORD'] . '</option>';
+                    }                
+                ?>
+            </select>
+
+            <select name="selectDate" id="selectDate" required>
+                <option value="">--Select Date--</option>
+                <?php 
+                    foreach($dateQuery as $d){
+                        if(isset($_POST['selectDate'])){
+                            if($selectedTimestamp == $d['DATE(TIMESTAMP)']){
+                        echo '<option value="'. $d['DATE(TIMESTAMP)'] .'" selected>' . $d['DATE(TIMESTAMP)'] . '</option>';
+                            }else{
+                        echo '<option value="'. $d['DATE(TIMESTAMP)'] .'">' . $d['DATE(TIMESTAMP)'] . '</option>';
+                            }
+                        }else{
+                        echo '<option value="'. $d['DATE(TIMESTAMP)'] .'">' . $d['DATE(TIMESTAMP)'] . '</option>';
+
+                        }
+                    }                
+                ?>
+            </select>
+
+            <button class="btn" type="submit">SEARCH</button>
+            <a href="logs.php" style="font-weight:500; font-family:inherit;"><button class="btn" type="button">VIEW ALL</button></a>
+            </form>
 
 <div class="tableArea">
 

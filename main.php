@@ -103,7 +103,7 @@ try {
     <link rel="stylesheet" href="css/flickity.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/mdb.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.php">
 
 </head>
 

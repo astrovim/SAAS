@@ -49,6 +49,13 @@ h1{
     color: white;
 }
 
+a {
+    color: black;
+}
+
+a:hover {
+    color: whitesmoke;
+}
 
 
 

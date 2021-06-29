@@ -20,11 +20,13 @@ try {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $emailAd = $_POST['emailAd'];
-    $fullName = $_POST['fullName'];
+    $firstName = $_POST['firstName'];
+    $middleName = $_POST['middleName'];
+    $lastName = $_POST['lastName'];
 
-    $statement = $connection->prepare("INSERT INTO `admin`(`USERNAME`, `NAME`, `EMAIL`, `PASSWORD`) VALUES(?, ?, ?, ?)");
+    $statement = $connection->prepare("INSERT INTO `admin`(`USERNAME`, `FIRSTNAME`, `MIDDLENAME`, `LASTNAME`, `EMAIL`, `PASSWORD`) VALUES(?, ?, ?, ?, ?, ?)");
 
-    $statement->execute([$username ,$fullName, $emailAd, $password]);
+    $statement->execute([$username ,$firstName, $middleName, $lastName, $emailAd, $password]);
     
     header('Location: userEdited.php');
 
@@ -38,7 +40,7 @@ try {
     
         $statement->execute([$username]);
         
-        header('Location: userEdited.php');
+        header('Location: editUser.php');
     
         }
 
@@ -51,7 +53,7 @@ try {
     
         $statement->execute([$email, $username]);
         
-        header('Location: userEdited.php');
+        header('Location: editUser.php');
     
         }
 

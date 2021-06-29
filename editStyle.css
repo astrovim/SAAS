@@ -95,7 +95,12 @@ textarea {
 
 
 .tableArea {
-    margin-top: 25px;
+    vertical-align:top;
+    margin-top: 5vh;
+    /* background-color: whitesmoke; */
+}
+
+.table {
     background-color: whitesmoke;
 }
 

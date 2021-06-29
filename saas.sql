@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 24, 2021 at 05:42 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Generation Time: Jun 29, 2021 at 05:04 PM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 8.0.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,7 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admin` (
   `USERNAME` varchar(25) NOT NULL,
-  `NAME` varchar(50) NOT NULL,
+  `FIRSTNAME` varchar(50) NOT NULL,
+  `MIDDLENAME` varchar(50) NOT NULL,
+  `LASTNAME` varchar(50) NOT NULL,
   `EMAIL` varchar(25) NOT NULL,
   `PASSWORD` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -38,10 +40,11 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`USERNAME`, `NAME`, `EMAIL`, `PASSWORD`) VALUES
-('admin', 'ad min', 'admin@gmail.com', 'admin123'),
-('galfo', 'fernando galfo', 'fernandogalfo@gmail.com', 'galfo123'),
-('rodel', 'aldrin', 'rodel@gmail.com', '123123');
+INSERT INTO `admin` (`USERNAME`, `FIRSTNAME`, `MIDDLENAME`, `LASTNAME`, `EMAIL`, `PASSWORD`) VALUES
+('admin', 'admin', 'admin', 'admin', 'admin@gmail.com', 'admin123'),
+('galfo', 'fernando', 'galfo', 'galfo', 'fernandogalfo@gmail.com', 'galfo123'),
+('qwe', 'qwe', 'qwe', 'qwe', 'qwe@gmail.com', 'qwe'),
+('rodel', 'rodel', 'aldrin', 'aldrin', 'rodel@gmail.com', '123123');
 
 -- --------------------------------------------------------
 

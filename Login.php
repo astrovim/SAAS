@@ -39,11 +39,14 @@ if (isset($_SESSION['verified'])) {
             <input class="form-control" id="password" name="password" type="password" required>
             <label class="form-label" for="password">Password</label>
         </div>
+        <div>
+        <a href="forgot.php">Forgot Password?</a>
+        </div>
         <div class="credentials">
            <h6> <?php if(isset($_GET['credentials'])) { echo $_GET['credentials']; } ?> </h6>
         </div>
         <div>
-            <button class="btn btn-primary" type="submit" name="submit" name="action">Login</button>
+            <button class="btn btn-primary" type="submit" name="submit">Login</button>
         </div>
     </form>
     </div>
