@@ -7,11 +7,16 @@
 }
 
 body {
-    background-color: #4D4F50;
+    background:linear-gradient(0deg, rgba(77, 79, 80, 0.81), rgba(77, 79, 80, 0.81)), url('img/contents/NEU_Main2.jpg');
+    /* background-color: rgba(77, 79, 80, 0.5); */
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
 }
 
 .editBody {
     margin-bottom: 50px;
+    /* background-color: rgba(77, 79, 80, 0.95); */
 }
 
 .btn {

@@ -93,7 +93,28 @@ $userQuery = $userResult;
             rowSelected.style.backgroundColor = "#9FE2BF";
             rowSelected.className += " selected";
 
+            var wew = '<?php echo $userT?>';
+
+            // if(rowSelected.cells[0].innerHTML == wew){
+            // document.getElementById('cpBtn').style.display = 'inline-block';
+            // document.getElementById('delBtn').style.display = 'inline-block';
+            // document.getElementById('cmBtn').style.display = 'inline-block';
+            // }else{
+            // document.getElementById('delBtn').style.display = 'none';
+            // document.getElementById('cpBtn').style.display = 'none';
+            // document.getElementById('cmBtn').style.display = 'none';
+            // }
+
+            if(wew == 'admin'){
+            document.getElementById('cpBtn').style.display = 'inline-block';
+            document.getElementById('cmBtn').style.display = 'inline-block';
             if(rowSelected.cells[0].innerHTML != 'admin'){
+            document.getElementById('delBtn').style.display = 'inline-block';
+            }else{
+            document.getElementById('delBtn').style.display = 'none';
+            }
+            }else{
+            if(rowSelected.cells[0].innerHTML == wew){
             document.getElementById('cpBtn').style.display = 'inline-block';
             document.getElementById('delBtn').style.display = 'inline-block';
             document.getElementById('cmBtn').style.display = 'inline-block';
@@ -102,15 +123,11 @@ $userQuery = $userResult;
             document.getElementById('cpBtn').style.display = 'none';
             document.getElementById('cmBtn').style.display = 'none';
             }
-
-            var wew = '<?php echo $userT?>';
-            if(wew == 'admin'){
-            document.getElementById('cpBtn').style.display = 'inline-block';
-            document.getElementById('cmBtn').style.display = 'inline-block';
             }
 
             document.getElementById('cpSect').style.display = 'none';
             document.getElementById('emSect').style.display = 'none';
+
 
             document.getElementById("userDel").value=rowSelected.cells[0].innerHTML;
             document.getElementById("userP").value=rowSelected.cells[0].innerHTML;

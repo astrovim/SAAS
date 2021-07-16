@@ -8,6 +8,8 @@ try {
     if (isset($_POST['forgotEmail'])) {
 
         $forgotEmail = $_POST['forgotEmail'];
+
+        $to_email = $forgotEmail;
         
         $emailDb = $connection->prepare("select * from ADMIN where EMAIL=?");
 
@@ -31,7 +33,7 @@ try {
 $body = 'Hi! ' . $username . ',' . "\n" . "\n" . 'Here is your credentials,' . "\n" . "\n" . 'USERNAME: ' . $username . "\n" . 'PASSWORD: ' . $password;
 
 
-$to_email = "ririkz13@gmail.com";
+
 $subject = "OSAS Recovery Email";
 $headers = "From: neu.osas@gmail.com";
  

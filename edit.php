@@ -794,7 +794,7 @@ try {
                 // }
                 switch (distext) {
                     case 'Main Page':
-                        document.getElementById('MainEditSection').style.display = 'block';
+                        document.getElementById('MainEditSection').style.display = 'flex';
                         document.getElementById('1.1EditSection').style.display = 'none';
                         document.getElementById('1.2EditSection').style.display = 'none';
                         document.getElementById('1.3EditSection').style.display = 'none';
@@ -1418,8 +1418,9 @@ try {
                 <!-- <button id="pageSelectBtn" class="btn" type="submit" disabled>GO</button> -->
             </form>
 
-<div id='MainEditSection' style="display:none">
-            <div class='editHeader'>
+<div id='MainEditSection' style="display:none;">
+<div style="width:40%;">
+<div class='editHeader'>
                 <h1>MAIN PAGE</h1>
             </div>
 
@@ -1587,6 +1588,10 @@ try {
 
             <button class="btn" type="submit">SAVE</button>
             </form>
+</div>
+<div style="flex-grow: 1;">
+<iframe style="margin-left: 50px; width:90%; height: 2023px; pointer-events: none;" scrolling="no" src="main.php" frameborder="0"></iframe>
+</div>
 </div>
 
 <div id="1.1EditSection" style="display:none">

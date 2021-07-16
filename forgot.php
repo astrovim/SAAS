@@ -55,6 +55,17 @@ foreach($emailResult as $d){
         }
     }
 
+    function login() {
+        var inputEmail = document.getElementById('forgotEmail').value;
+        var ar = <?php echo json_encode($emailArray) ?>;
+        if(ar.includes(inputEmail)) {
+        return true;
+    } else {
+        alert('Your email is not associated to any account. \n  Please contact System Admin.');
+        return false;
+        }
+    }
+
 </script>
 </head>
 
@@ -64,13 +75,13 @@ foreach($emailResult as $d){
         <input type="hidden" name="credentials" value="">
         </form>
         <h1>FORGOT PASSWORD</h1>
-        <form id="forgotForm" action="sendmail.php" method="POST">
+        <form id="forgotForm" action="sendmail.php" method="POST" onsubmit="return login();">
         <div class="form-white form-outline">
-            <input class="form-control" id="forgotEmail" name="forgotEmail" type="email" required onkeyup="emailCheck();">
+            <input class="form-control" id="forgotEmail" name="forgotEmail" type="email" required >
             <label class="form-label" for="forgotEmail">Email Address</label>     
         </div>
         <div style="height:50px;">
-            <button class="btn btn-primary" type="submit" id ="submitBtn" name="submit" style="display:none;">Send</button>            
+            <button class="btn btn-primary" type="submit" id ="submitBtn" name="submit">Send</button>            
         </div>
     </form>
     <div>
@@ -84,3 +95,6 @@ foreach($emailResult as $d){
     <script src="js/flickity.pkgd.min.js"></script>
 </body>
 </html>
+
+<!-- onkeyup="emailCheck();" -->
+<!-- onkeydown="return event.key != 'Enter';" -->

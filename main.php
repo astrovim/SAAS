@@ -1,5 +1,10 @@
 <?php
 
+session_start();
+// if (isset($_SESSION['verified'])) {
+// 	header('Location: down.php');
+// 	exit;
+// }
 
 try {
     $connection = new PDO('mysql:host=127.0.0.1;dbname=saas', 'root', '');
@@ -105,6 +110,17 @@ try {
     <link href="css/mdb.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.php">
 
+
+<script>
+function iniFrame() {
+    var x = <?php echo (isset($_SESSION['verified']) ? 'true' : 'false'); ?>;
+    if ( window.location == window.parent.location && x == true) {
+            window.location.replace("down.php");
+    }
+}
+
+iniFrame();
+</script>
 </head>
 
 <body>
